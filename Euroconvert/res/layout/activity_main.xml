@@ -51,4 +51,24 @@
         android:text="@string/diaxor"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
+    <TextView
+        android:id="@+id/apotelesmaeurokilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/money"
+        android:layout_below="@+id/money"
+        android:layout_marginTop="17dp"
+        android:text="@string/apotelesma1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tiketa1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/apotelesmaeurokilo"
+        android:layout_alignBottom="@+id/apotelesmaeurokilo"
+        android:layout_toRightOf="@+id/money"
+        android:text="@string/ettik1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </RelativeLayout>

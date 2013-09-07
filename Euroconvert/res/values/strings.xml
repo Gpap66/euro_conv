@@ -8,5 +8,7 @@
     <string name="dollar">$</string>
     <string name="pounds">pounds</string>
     <string name="diaxor">/</string>
+    <string name="apotelesma1">ap1</string>
+    <string name="ettik1">euro/kg</string>
 
 </resources>

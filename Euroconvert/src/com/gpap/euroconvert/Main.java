@@ -1,4 +1,6 @@
-package comgpap.euroconvert;
+package com.gpap.euroconvert;
+
+import comgpap.euroconvert.R;
 
 import android.os.Bundle;
 import android.app.Activity;
