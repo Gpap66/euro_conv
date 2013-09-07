@@ -71,4 +71,14 @@
         android:text="@string/ettik1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <Button
+        android:id="@+id/koum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tiketa1"
+        android:layout_marginTop="64dp"
+        android:layout_toRightOf="@+id/apotelesmaeurokilo"
+        android:gravity="center_vertical"
+        android:text="@string/koumpi" />
+
 </RelativeLayout>
