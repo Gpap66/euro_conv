@@ -9,7 +9,8 @@ public class Calcula {
 		double seEr=0.76*dol;
 		
 		apot = seEr/seKg;
-						
+		apot = Math.round(apot * 100);	
+		apot=apot/100;
 		return apot;
 		
 	}

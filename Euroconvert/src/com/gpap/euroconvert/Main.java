@@ -13,6 +13,12 @@ import android.widget.TextView;
 
 public class Main extends Activity {
 
+    TextView apot;
+	TextView poun;
+	EditText money;
+	Calcula result;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -20,32 +26,24 @@ public class Main extends Activity {
 		
 		Button koump= (Button) findViewById(R.id.koum);
 
+		apot = (TextView) findViewById(R.id.apotelesmaeurokilo);
+		poun= (EditText) findViewById(R.id.poundsLabel);
+		money= (EditText) findViewById(R.id.money);
+		result =new  Calcula();
 		
-		
-		
-		
-		
-		
-		koump.setOnClickListener(ok);
 				
+		koump.setOnClickListener(ok);
+			
 	}
 	
 	
 	private View.OnClickListener ok = new OnClickListener() {
 		
-		Calcula result =new  Calcula();
-		
-		
-		
-		
 		
 		@Override
 		public void onClick(View v) {
 			
-			TextView apot = (TextView) findViewById(R.id.apotelesmaeurokilo);
-			EditText poun= (EditText) findViewById(R.id.poundsLabel);
-			EditText money= (EditText) findViewById(R.id.money);
-			
+						
 			double aa= result.toEuroKg(Double.parseDouble(money.getText().toString()), Double.parseDouble(poun.getText().toString()));
 			apot.setText(String.valueOf(aa));
 			
