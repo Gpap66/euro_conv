@@ -1,5 +1,7 @@
 package com.gpap.euroconvert;
 
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 import com.gpap.euroconvert.R;
 
 import android.os.Bundle;
@@ -17,7 +19,7 @@ public class Main extends Activity {
 	TextView poun;
 	EditText money;
 	Calcula result;
-	
+	AdView adView;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,10 @@ public class Main extends Activity {
 		
 				
 		koump.setOnClickListener(ok);
+		
+		// Look up the AdView as a resource and load a request.
+	    adView = (AdView)this.findViewById(R.id.adView);
+	    adView.loadAd(new AdRequest());
 			
 	}
 	
