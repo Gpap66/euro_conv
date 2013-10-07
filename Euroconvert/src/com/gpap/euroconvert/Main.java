@@ -1,10 +1,9 @@
 package com.gpap.euroconvert;
 
 import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
+
 import com.google.ads.AdView;
 import com.gpap.euroconvert.R;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -12,51 +11,49 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Main extends Activity {
 
-    TextView apot;
+	TextView apot;
 	TextView poun;
 	EditText money;
 	Calcula result;
 	AdView adView;
-	RelativeLayout layout;
-	
+    double aa;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		Button koump= (Button) findViewById(R.id.koum);
+
+		Button koump = (Button) findViewById(R.id.koum);
 
 		apot = (TextView) findViewById(R.id.apotelesmaeurokilo);
-		poun= (EditText) findViewById(R.id.poundsLabel);
-		money= (EditText) findViewById(R.id.money);
-		result =new  Calcula();
-			
+		poun = (EditText) findViewById(R.id.poundsLabel);
+		money = (EditText) findViewById(R.id.money);
+		result = new Calcula();
+
 		koump.setOnClickListener(ok);
-		
+
 		// Look up the AdView as a resource and load a request.
-	    adView = new AdView(this, AdSize.BANNER, "ca-app-pub-0441471183533165/7725633131"); //this.findViewById(R.id.adView);
-	    layout = (RelativeLayout)findViewById(R.id.ad);
-	    adView.loadAd(new AdRequest());
+		adView = (AdView) this.findViewById(R.id.adView);
+		// layout = (RelativeLayout)findViewById(R.id.ad);
+		adView.loadAd(new AdRequest());
 	}
-	
-	
+
 	private View.OnClickListener ok = new OnClickListener() {
-		
-		
+
 		@Override
 		public void onClick(View v) {
-			
-						
-			double aa= result.toEuroKg(Double.parseDouble(money.getText().toString()), Double.parseDouble(poun.getText().toString()));
+
+			aa = result.toEuroKg(
+					Double.parseDouble(money.getText().toString()),
+					Double.parseDouble(poun.getText().toString()));
 			apot.setText(String.valueOf(aa));
-			
-			//TODO Auto-generated method stub
-			
+
+			// TODO Auto-generated method stub
+
 		}
 	};
 
@@ -66,6 +63,5 @@ public class Main extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
 
 }
