@@ -5,15 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#33b5e5"
-   
     tools:context=".Main" >
-
-    <EditText
-        android:id="@+id/money"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="3"
-        android:inputType="numberDecimal" />
 
     <TextView
         android:id="@+id/dollarLabel"
@@ -21,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/money"
         android:layout_toRightOf="@+id/money"
-        android:text="@string/dollar" />
+        android:text="@string/dollar"
+        android:textSize="@dimen/activity_horizontal_margin" />
 
     <TextView
         android:id="@+id/TextView03"
@@ -32,12 +25,27 @@
         android:text="@string/pounds" />
 
     <EditText
+        android:id="@+id/money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="28dp"
+        android:ems="3"
+        android:imeOptions="normal"
+        android:inputType="numberDecimal"
+        android:nextFocusDown="@id/poundsLabel" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
         android:id="@+id/poundsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/diaxorLabel"
         android:layout_toRightOf="@+id/diaxorLabel"
         android:ems="3"
+        android:imeOptions="actionDone"
         android:inputType="numberDecimal" />
 
     <TextView
@@ -50,15 +58,16 @@
         android:text="@string/diaxor"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <TextView
-        android:id="@+id/apotelesmaeurokilo"
-        android:layout_width="wrap_content"
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/money"
-        android:layout_below="@+id/money"
-        android:layout_marginTop="17dp"
-        android:text="@string/apotelesma1"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-0441471183533165/7725633131"
+        
+        ads:testDevices="TEST_EMULATOR" >
+    </com.google.ads.AdView>
 
     <TextView
         android:id="@+id/tiketa1"
@@ -66,29 +75,28 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/apotelesmaeurokilo"
         android:layout_alignBottom="@+id/apotelesmaeurokilo"
-        android:layout_toRightOf="@+id/money"
+        android:layout_alignLeft="@+id/diaxorLabel"
         android:text="@string/ettik1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/apotelesmaeurokilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/money"
+        android:layout_below="@+id/money"
+        android:layout_marginTop="18dp"
+        android:text="@string/apotelesma1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/koum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:gravity="center_vertical"
+        android:layout_above="@+id/adView"
+        android:layout_alignRight="@+id/tiketa1"
+        android:layout_marginBottom="35dp"
+        android:gravity="center_vertical|center_horizontal"
         android:text="@string/koumpi" />
-
-    <com.google.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-0441471183533165/7725633131"
-        ads:loadAdOnCreate="true"
-        ads:testDevices="TEST_EMULATOR" >
-
-    </com.google.ads.AdView>
 
 </RelativeLayout>

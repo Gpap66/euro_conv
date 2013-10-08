@@ -35,7 +35,8 @@ public class Main extends Activity {
 		result = new Calcula();
 
 		koump.setOnClickListener(ok);
-
+		
+		
 		// Look up the AdView as a resource and load a request.
 		adView = (AdView) this.findViewById(R.id.adView);
 		// layout = (RelativeLayout)findViewById(R.id.ad);
