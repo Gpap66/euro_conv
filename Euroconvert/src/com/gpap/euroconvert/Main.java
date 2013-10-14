@@ -29,10 +29,11 @@ public class Main extends Activity {
 
 		Button koump = (Button) findViewById(R.id.koum);
 
-		apot = (TextView) findViewById(R.id.apotelesmaeurokilo);
+		
 		poun = (EditText) findViewById(R.id.poundsLabel);
 		money = (EditText) findViewById(R.id.money);
 		result = new Calcula();
+		apot = (TextView) findViewById(R.id.apotelesmaeurokilo);
 
 		koump.setOnClickListener(ok);
 		
@@ -47,12 +48,18 @@ public class Main extends Activity {
 
 		@Override
 		public void onClick(View v) {
+			if (poun.getText() == null || money.getText() == null ) {
+				finish();
+			} else {
+				
+				aa = result.toEuroKg(
+						Double.parseDouble(money.getText().toString()),
+						Double.parseDouble(poun.getText().toString()));
+				apot.setText(String.valueOf(aa));
 
-			aa = result.toEuroKg(
-					Double.parseDouble(money.getText().toString()),
-					Double.parseDouble(poun.getText().toString()));
-			apot.setText(String.valueOf(aa));
 
+			};
+			
 			// TODO Auto-generated method stub
 
 		}
