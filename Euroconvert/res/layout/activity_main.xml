@@ -8,6 +8,19 @@
     android:gravity="center_horizontal"
     tools:context=".Main" >
 
+    <EditText
+        android:id="@+id/money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="28dp"
+        android:ems="3"
+        android:imeOptions="normal"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
     <TextView
         android:id="@+id/dollarLabel"
         android:layout_width="wrap_content"
@@ -18,24 +31,14 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/TextView03"
+        android:id="@+id/diaxorLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/poundsLabel"
-        android:layout_toRightOf="@+id/poundsLabel"
-        android:text="@string/pounds"
-        android:textSize="16sp" />
-
-    <EditText
-        android:id="@+id/money"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="28dp"
-        android:ems="3"
-        android:imeOptions="normal"
-        android:inputType="numberDecimal"
-        android:nextFocusDown="@id/poundsLabel" />
+        android:layout_alignBaseline="@+id/dollarLabel"
+        android:layout_alignBottom="@+id/dollarLabel"
+        android:layout_toRightOf="@+id/dollarLabel"
+        android:text="@string/diaxor"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <EditText
         android:id="@+id/poundsLabel"
@@ -48,34 +51,13 @@
         android:inputType="numberDecimal" />
 
     <TextView
-        android:id="@+id/diaxorLabel"
+        android:id="@+id/TextView03"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/dollarLabel"
-        android:layout_alignBottom="@+id/dollarLabel"
-        android:layout_toRightOf="@+id/dollarLabel"
-        android:text="@string/diaxor"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/apotelesmaeurokilo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/money"
-        android:layout_below="@+id/money"
-        android:layout_marginTop="18dp"
-        android:text="@string/apotelesma1"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <com.google.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-0441471183533165/7725633131"
-        ads:testDevices="TEST_EMULATOR" />
+        android:layout_alignBottom="@+id/poundsLabel"
+        android:layout_toRightOf="@+id/poundsLabel"
+        android:text="@string/pounds"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/tiketa1"
@@ -95,5 +77,24 @@
         android:layout_marginBottom="69dp"
         android:gravity="center_vertical"
         android:text="@string/koumpi" />
+
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-0441471183533165/7725633131"
+        ads:testDevices="TEST_EMULATOR" />
+
+    <TextView
+        android:id="@+id/apotelesmaeurokilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dollarLabel"
+        android:layout_toRightOf="@+id/dollarLabel"
+        android:text="@string/apotelesma1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

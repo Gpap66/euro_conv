@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Main extends Activity {
 
@@ -42,22 +43,28 @@ public class Main extends Activity {
 		adView = (AdView) this.findViewById(R.id.adView);
 		// layout = (RelativeLayout)findViewById(R.id.ad);
 		adView.loadAd(new AdRequest());
+		// Toast.makeText(this, "telos re",Toast.LENGTH_SHORT).show();
 	}
 
 	private View.OnClickListener ok = new OnClickListener() {
 
 		@Override
 		public void onClick(View v) {
-			if (poun.getText() == null || money.getText() == null ) {
-				finish();
+			if (!poun.getText().toString().equals("") && !money.getText().toString().equals("") ) {
+				try {
+					aa = result.toEuroKg(
+							Double.parseDouble(money.getText().toString()),
+							Double.parseDouble(poun.getText().toString()));
+					apot.setText(String.valueOf(aa));
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			} else {
 				
-				aa = result.toEuroKg(
-						Double.parseDouble(money.getText().toString()),
-						Double.parseDouble(poun.getText().toString()));
-				apot.setText(String.valueOf(aa));
-
-
+				//finish();
+				Toast.makeText(getApplicationContext(), "kena pedia",Toast.LENGTH_SHORT).show();
 			};
 			
 			// TODO Auto-generated method stub
